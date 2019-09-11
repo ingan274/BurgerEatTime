@@ -1,0 +1,33 @@
+{
+  "name": "burger_eat_time",
+  "version": "1.0.0",
+  "description": "Do you prefer virtual burgers over the real deal? If so, Burger Eat Time! the place for you! Simply type in the name of any burger you'd like to eat into the text box. ",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^1.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ingan274/BurgerEatTime.git"
+  },
+  "keywords": [
+    "Node",
+    "Handlebars",
+    "Javascript",
+    "MySQL",
+    "HTML",
+    "CSS"
+  ],
+  "author": "Isabel Ngan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ingan274/BurgerEatTime/issues"
+  },
+  "homepage": "https://github.com/ingan274/BurgerEatTime#readme"
+}
