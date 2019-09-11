@@ -2,12 +2,13 @@
 Do you prefer virtual burgers over the real deal? If so, Burger Eat Time! the place for you!
 Simply type in the name of any burger you'd like to eat into the text box. Hit "Order Burger" to see it pop up on your plate.
 <br>
-🍔 🍔 🍔 🍔 🍔
 <br>
+🍔 🍔 🍔 🍔 🍔
+<br><br>
 Click the "Devour" button next to any burger on your plate to get it into your belly!
-<br>
+<br><br>
 🍔 🍔 🍔 🍔 🍔
-<br>
+<br><br>
 # Instructions
 To run the site locally and interact with only your own and the example data,
 
