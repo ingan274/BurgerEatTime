@@ -1,4 +1,7 @@
 # Burger Eat Time
+###### A simpler spin on Burger Time!
+<img src="./public/imgs/BurgerTime_Logo.png">
+
 Do you prefer virtual burgers over the real deal? If so, Burger Eat Time! the place for you!
 Simply type in the name of any burger you'd like to eat into the text box. Hit "Order Burger" to see it pop up on your plate.
 <br>
