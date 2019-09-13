@@ -1,0 +1,43 @@
+/* 
+font-family: 'Press Start 2P', cursive;
+font-family: 'Open Sans', sans-serif;
+    wieght: 400, 600, 700
+ */
+body {
+    background-image: linear-gradient(rgba(124, 124, 124, 0.5),rgba(124, 124, 124, 0.5)), url(../imgs/burgerbackground.jpg);
+    background-size: cover;
+}
+
+#navBar {
+    background: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0,0,0,0.8))
+}
+
+ .nav-link {
+     padding: 20px 10px;
+     font-family: 'Open Sans', sans-serif;
+     font-weight: 600;
+     font-size: 14px;
+ }
+
+ #burger-nav {
+     width: 40px;
+ }
+
+ #burgerName {
+    font-family: 'Press Start 2P', cursive;
+    color:white;
+    padding-right: 30px;
+ }
+
+ #apiLink, #repositoryLink {
+    color:white;
+ }
+
+ #apiLink:hover {
+    color:rgb(255, 219, 88);
+ }
+
+ #repositoryLink:hover {
+    color:rgb(175, 19, 10);
+ } 
+
