@@ -21,12 +21,14 @@ Make sure you have fulfilled the prerequisites above.
 * Copy the schema.sql and seed.sql into Sequal Pro (or anything equivolent)
 * Run `node server.js`
 * Go to `localhost:3000` in your web browser.
+##### Time to EAT!!
+<img src="https://media.giphy.com/media/3oEduRhaW6LT3hifi8/source.gif">
 
 # Technologies Used
 * Node.js/NPM (JavaScript environment/Package manager)
 * Express.js (Web framework)
 * Heroku (Cloud platform)
-* Handlebars, HTML, CSS (Front-end framework)
+* Handlebars, CSS, Javascript/JQuery (Front-end framework)
 
 ##### Week 13 assigment for the June 2019 cohort of UCLA Boot Camp
 
