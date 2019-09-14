@@ -1,10 +1,5 @@
-var orm = require('./config/orm');
-var selectAll = orm.selectAll;
-var insertOne = orm.insertOne;
-var updateOne = orm.updateOne;
-
+// express
 var express = require("express");
-var exphbs = require("express-handlebars");
 var app = express();
 
 // Set the port of our application
@@ -19,11 +14,12 @@ app.use(express.json());
 app.use(express.static('public'))
 
 // connect to handlebars
+var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // ORM calls
-require('./config/orm')(app)
+require("./controllers/burgers_controller")(app);
 
 // listen
 app.listen(PORT, function() {
