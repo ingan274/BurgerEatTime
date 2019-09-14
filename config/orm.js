@@ -36,7 +36,7 @@ function objToSql(ob) {
 
 module.exports = {
     //get
-    selectAll: function (table) {
+    selectAll: function (table, cb) {
         // create SQL search
         var sqlsearch = "SELECT * FROM " + table
         // Run query
@@ -44,10 +44,11 @@ module.exports = {
             if (err) {
                 return res.status(500).end();
             }
+            cb(result)
         });
     },
     // post
-    insertOne: function (table, column, value) {
+    insertOne: function (table, column, value, cb) {
         // create SQL search
         var sqlsearch = "INSERT INTO  " + table + " (" + column + ") VALUES (" + numToString(value.length) + ")"
         // Run query
@@ -55,10 +56,11 @@ module.exports = {
             if (err) {
                 return res.status(500).end();
             }
+            cb(result)
         });
     },
     //put
-    updateOne: function (table, updateColVal, condition) {
+    updateOne: function (table, updateColVal, condition, cb) {
         // create SQL search
         var sqlsearch = "UPDATE  " + table + " SET " + objToSql(updateColVal) + " WHERE " + condition
         // Run query
@@ -68,6 +70,8 @@ module.exports = {
             }
             else if (result.changedRows === 0) {
                 return res.status(404).end();
+            } else {
+                cb(result)
             }
         });
     }

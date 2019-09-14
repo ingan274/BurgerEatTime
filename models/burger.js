@@ -5,14 +5,20 @@ var insertOne = orm.insertOne;
 var updateOne = orm.updateOne;
 
 module.exports = {
-    getAll: function () {
-        selectAll("burgers")
+    getAll: function (cb) {
+        selectAll("burgers", function(res){
+            cb(res);
+        })
     },
-    insertNew: function (name) {
-        insertOne("burgers", "burger_name", name)
+    insertNew: function (name, cb) {
+        insertOne("burgers", "burger_name", name, function(res){
+            cb(res);
+        })
     },
-    updatePrev: function (objColVals, condition) {
-        updateOne("burgers", objColVals, condition)
+    updatePrev: function (objColVals, condition, cb) {
+        updateOne("burgers", objColVals, condition, function(res){
+            cb(res)
+        })
     },
 }
 

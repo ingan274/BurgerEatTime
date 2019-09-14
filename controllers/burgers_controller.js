@@ -2,21 +2,18 @@ var burger = require('../models/burger');
 
 module.exports = function (app) {
     var all = burger.getAll;
-    var update = burger.updatePrev;
     var insert = burger.insertNew;
+    var update = burger.updatePrev;
 
     // get all
     app.get("/", function (req, res) {
         burger.getAll(function(data){
-            console.log(data)
+            var object = {
+                burgers: data
+            }
+            console.log(object)
+            res.render("index", object);
         })
-        // all(function (data) {
-        //     var object = {
-        //         burgers: data
-        //     }
-        //     console.log(object)
-        //     // res.render("index", object);
-        // })
     });
 
     // get api burgers
