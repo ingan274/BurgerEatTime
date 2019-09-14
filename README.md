@@ -26,7 +26,7 @@ Make sure you have fulfilled the prerequisites above.
 * Node.js/NPM (JavaScript environment/Package manager)
 * Express.js (Web framework)
 * Heroku (Cloud platform)
-* Handlebars, HTML, CSS (Front-end framework)
+* Handlebars, CSS, Javascript/JQuery (Front-end framework)
 
 ##### Week 13 assigment for the June 2019 cohort of UCLA Boot Camp
 
