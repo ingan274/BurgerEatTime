@@ -1,16 +1,28 @@
-<ul>
-  {{#each burgers}}
-  <li>
-    <p>
-      {{this.id}}. {{this.burger}}
-    </p>
-    <button data-planid="{{this.id}}" class="devour">Devour</button>
-  </li>
-  {{/each}}
-</ul>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-4 menuDiv" >
+            <ul>
+                {{#each burgers}}
+                <li>
+                    <p>
+                        {{this.id}}. {{this.burger}}
+                    </p>
+                    <button data-planid="{{this.id}}" class="devour">Devour</button>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="col-2"></div>
+        <div class="col-4 pastMenuDiv"></div>
+        <div class="col-1"></div>
 
-<h2>Add to Menu</h2>
-<form id="createplan" class="button-size">
-  <textarea type="text" name="addBurger"></textarea>
-  <button type="submit">Save Plan!</button>
-</form>
+    </div>
+    <div class="row">
+        <h2>Add to Menu</h2>
+        <form id="createplan" class="button-size">
+            <textarea type="text" name="addBurger"></textarea>
+            <button type="submit">Add Burger</button>
+        </form>
+    </div>
+</div>
