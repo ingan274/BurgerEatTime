@@ -1,28 +1,41 @@
 <div class="container-fluid">
+    <!-- Add burger section -->
     <div class="row">
-        <div class="col-1"></div>
-        <div class="col-4 menuDiv" >
-            <ul>
-                {{#each burgers}}
-                <li>
-                    <p>
-                        {{this.id}}. {{this.burger}}
-                    </p>
-                    <button data-planid="{{this.id}}" class="devour">Devour</button>
-                </li>
-                {{/each}}
-            </ul>
+        <div class="col-xs-12 text-center enter_section">
+            <p>Enter the name of a burger that you would like to eat!</p>
+            <p id="error"></p>
+            <form>
+                {{!-- action="/api/burgers" method="POST" --}}
+                <label for="burger_name">Burger Name:</label>
+                <input type="text" id="burger_name" name="burger_name">
+                <button type="submit" class="btn btn-primary" id="order-button">Order</button>
+            </form>
         </div>
-        <div class="col-2"></div>
-        <div class="col-4 pastMenuDiv"></div>
-        <div class="col-1"></div>
-
     </div>
     <div class="row">
-        <h2>Add to Menu</h2>
-        <form id="createplan" class="button-size">
-            <textarea type="text" name="addBurger"></textarea>
-            <button type="submit">Add Burger</button>
-        </form>
+        <div class="col-1"></div>
+        <div class="col-4 menuDiv" id="menu">
+
+            <h1 class="menuTitle">Current Menu</h1>
+            {{#each burgers}}
+            {{!-- if not --}}
+            {{#unless devoured}}
+            {{> menu devoured=true}}
+            {{/unless}}
+            {{/each}}
+
+        </div>
+        <div class="col-2"></div>
+        <div class="col-4 menuDiv" id="pastMenu">
+            <h1 class="menuTitle">Past Menu</h1>
+            {{#each burgers}}
+            {{#if devoured}}
+            {{> menu devoured=false}}
+            {{/if}}
+            {{/each}}
+
+        </div>
+        <div class="col-1"></div>
+
     </div>
 </div>

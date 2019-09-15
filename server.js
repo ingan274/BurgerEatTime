@@ -19,7 +19,8 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // ORM calls
-require("./controllers/burgers_controller")(app);
+var router = require("./controllers/burgers_controller");
+app.use(router)
 
 // listen
 app.listen(PORT, function() {

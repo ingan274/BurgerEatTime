@@ -3,16 +3,6 @@ var connection = require('./connection');
 // get home
 
 // Helper function for SQL syntax.
-// number/symbol to string, it determines length of objects to insert
-function numToString(num) {
-    var arr = [];
-
-    for (var item of num) {
-        arr.push("?");
-    }
-    return arr.toString();
-}
-
 // Helper function to convert object key/value pairs to SQL syntax
 function objToSql(ob) {
     var arr = [];
@@ -21,16 +11,13 @@ function objToSql(ob) {
         var value = ob[key];
         // check to skip hidden properties
         if (Object.hasOwnProperty.call(ob, key)) {
-            // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
+            // if string with spaces, add quotations 
             if (typeof value === "string" && value.indexOf(" ") >= 0) {
                 value = "'" + value + "'";
             }
-            // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
-            // e.g. {sleepy: true} => ["sleepy=true"]
             arr.push(key + "=" + value);
         }
     }
-    // translate array of strings to a single comma-separated string
     return arr.toString();
 }
 
@@ -42,7 +29,7 @@ module.exports = {
         // Run query
         connection.query(sqlsearch, function (err, result) {
             if (err) {
-                return res.status(500).end();
+                throw err;
             }
             cb(result)
         });
@@ -50,11 +37,11 @@ module.exports = {
     // post
     insertOne: function (table, column, value, cb) {
         // create SQL search
-        var sqlsearch = "INSERT INTO  " + table + " (" + column + ") VALUES (" + numToString(value.length) + ")"
+        var sqlsearch = 'INSERT INTO ' + table + ' (' + column + ') VALUES ("' + value + '");'
         // Run query
         connection.query(sqlsearch, value, function (err, result) {
             if (err) {
-                return res.status(500).end();
+                throw err;
             }
             cb(result)
         });
@@ -66,13 +53,10 @@ module.exports = {
         // Run query
         connection.query(sqlsearch, function (err, result) {
             if (err) {
-                return res.status(500).end();
+                throw err;
             }
-            else if (result.changedRows === 0) {
-                return res.status(404).end();
-            } else {
-                cb(result)
-            }
+            cb(result)
+
         });
     }
     ,
