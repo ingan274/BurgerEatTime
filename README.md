@@ -20,7 +20,7 @@ Make sure you have fulfilled the prerequisites above.
 * Install modules with `npm install`
 * Copy the schema.sql and seed.sql into Sequal Pro (or anything equivolent)
 * Run `node server.js`
-* Go to `localhost:3000` in your web browser.
+* Go to `localhost:8080` in your web browser.
 ##### Time to EAT!!
 <img src="https://media.giphy.com/media/3oEduRhaW6LT3hifi8/source.gif">
 
