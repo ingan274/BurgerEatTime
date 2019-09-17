@@ -13,9 +13,9 @@ if (process.env.JAWSDB_URL) {
   });
 }
 
-// connection.query("SHOW TABLES", function(err,results){
-//   if (results.length === 0) {
-//     connection.query("CREATE DATABASE burgers_db; USE burgers_db; CREATE TABLE burgers (burger_id INT(10) NOT NULL AUTO_INCREMENT PRIMARY KEY, burger_name VARCHAR (50) NOT NULL, devoured BOOLEAN DEFAULT false NOT NULL);")
-//   };
-// })
+connection.query("SHOW TABLES", function(err,results){
+  if (results.length === 0) {
+    connection.query("CREATE TABLE burgers (burger_id INT(10) NOT NULL AUTO_INCREMENT PRIMARY KEY, burger_name VARCHAR (50) NOT NULL, devoured BOOLEAN DEFAULT false NOT NULL);")
+  };
+})
 module.exports = connection;
