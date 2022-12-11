@@ -4,7 +4,7 @@
   "description": "Do you prefer virtual burgers over the real deal? If so, Burger Eat Time! the place for you! Simply type in the name of any burger you'd like to eat into the text box. ",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-handlebars": "^3.1.0",
     "mysql2": "^1.7.0"
   },
